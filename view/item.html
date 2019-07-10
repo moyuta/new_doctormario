@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
+         <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         <meta name="viewport" content="width=device-width">
+        <title>doctor mario</title>
+
+    </head>
+    <body>
+    <div class="header">
+    <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
+    </div>
+    
+    <nav>
+      <ul class="primary">
+    <li>
+      <a href="/">Home</a>
+    </li>
+      <li>
+      <a href="progress">進め方</a>
+      <ul class="sub">
+        <li><a href="stage">ステージモードを進める</a></li>
+        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+        <li><a href="heart">ハートを回復する</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="chapter">攻略</a>
+    </li>
+    <li>
+      <a href="character">キャラ</a>
+      <ul class="sub">
+        <li><a href="list">キャラ一覧</a></li>
+        <li><a href="strongest">最強キャラランキング</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="gacha">スカウト</a>
+      <ul class="sub">
+        <li><a href="whatsgacha">スカウトとは？</a></li>
+         <li><a href="timing">タイミング</a></li>
+      </ul>
+    </li>
+    
+     <li>
+      <a href="item">アイテム</a>
+      <ul class="sub">
+        <li><a href="item#itemabout">アイテムとは？</a></li>
+        <li><a href="item#itemhowto">種類と使い方</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="heart">ハート</a>
+      <ul class="sub">
+        <li><a href="heart#heartabout">ハートとは？</a></li>
+        <li><a href="heart#heartkaihuku">回復方法</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="daiyamond">ダイヤ</a>
+      <ul class="sub">
+        <li><a href="daiyamond#daiyahowto">ダイヤとは？</a></li>
+        <li><a href="daiyamond#daiyaget">入手方法</a></li>
+      </ul>
+    </li>
+      </ul>
+    </nav>
+    <hr />
+    <!-- <div id="head"></div> -->
+    <div class = "daimei">
+     <h3>アイテム</h3>
+     </div>
+    <ul class="mokuji">
+      <li><a href="#itemabout">アイテムとは?</a></li>
+      <li><a href="#itemhowto">種類と使い方</a></li>
+    </ul>
+    
+    <div id="itemabout">
+      <h2 class="check">アイテムとは?</h2>
+    
+      <p>ドクターマリオワールドではステージクリアやハイスコアの更新に役立つ「サポートアイテム」があります。<br>
+    コインやダイヤモンドを消費するため、ここぞの場面で使いましょう。<br>
+    
+    アイテムを選択できるタイミングには2種類あり、<br>
+    ・<span style="color:red">開始前</span><br>
+    ・<span style="color:red">コンティニュー</span><br>
+    上記のタイミングでアイテムを選択できます。<br>
+      </p>
+    </div>
+    
+    <div id="itemhowto">
+      <h2 class="check">種類と使い方</h2>
+      <h3 class="check">開始前に選択できるアイテム</h3>
+    
+      <p>1.追加カプセル</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_1147329019.jpg">
+      <p>ステージ内で使えるカプセルが増えます。</p>
+      <p>2.スキル満タン</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_1147505955.jpg">
+      <p>スキルゲージが満タンになります．</p>
+      <p>3.スコアアップ</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_1148045581.jpg">
+      <p>獲得スコアが増加します。</p>
+      <p>4.ランダム!</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_1148308704.jpg">
+      <p>・追加カプセル<br>
+     ・スキル満タン<br>
+     ・スコアアップ<br>
+     上記の3つがランダムで発動します．
+      </p>
+    
+      <h3 class="check">コンテニュー時に選択できるアイテム</h3>
+      <p>1.追加カプセル</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_114901855.jpg">
+      <p>ステージ内で使えるカプセルが増えます。</p>
+      <p>2.レインボーカプセル</p>
+      <img src="https://img.altema.jp/drmarioworld/uploads/2019/06/2019y06m28d_1149573388.jpg">
+      <p>強力なレインボーカプセルが使用できるようになります．</p>
+    </div>
+    
+    
+    
+        <div class="footer">
+            <hr/>
+    
+     <!--  <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+      <a href="/" class="btn-circle-fishy">Home🏠</a>
+      <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+    </div>
+    
+    
+    
+    
+    
+    <script>
+    let socket = io.connect();
+    socket.emit("s","imgreq") ;
+    socket.on("head", (imgbox) => {
+     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+     let urlCreator = window.URL || window.webkitURL ;
+     let head = urlCreator.createObjectURL(blob_head);
+     let dot = urlCreator.createObjectURL(blob_dot);
+     let baikin = urlCreator.createObjectURL(blob_baikin);
+     let olddoc = urlCreator.createObjectURL(blob_olddoc);
+     $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
+    })
+    </script>
+    </body>
+
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
+         <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+         <meta name="viewport" content="width=device-width">
+        <title>doctor mario</title>
+
+    </head>
+    <body>
+    <div class="header">
+    <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
+    </div>
+
+<nav>
+  <ul class="primary">
+    <li>
+      <a href="/">Home</a>
+    </li>
+      <li>
+      <a href="progress">進め方</a>
+      <ul class="sub">
+        <li><a href="stage">ステージモードを進める</a></li>
+        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+        <li><a href="heart">ハートを回復する</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="chapter">攻略</a>
+    </li>
+    <li>
+      <a href="character">キャラ</a>
+      <ul class="sub">
+        <li><a href="list">キャラ一覧</a></li>
+        <li><a href="strongest">最強キャラランキング</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="gacha">スカウト</a>
+      <ul class="sub">
+        <li><a href="whatsgacha">スカウトとは？</a></li>
+         <li><a href="timing">タイミング</a></li>
+      </ul>
+    </li>
+
+     <li>
+       <a href="item">アイテム</a>
+       <ul class="sub">
+         <li><a href="item#itemabout">アイテムとは？</a></li>
+         <li><a href="item#itemhowto">種類と使い方</a></li>
+       </ul>
+     </li>
+      <li>
+       <a href="heart">ハート</a>
+       <ul class="sub">
+         <li><a href="heart#heartabout">ハートとは？</a></li>
+         <li><a href="heart#heartkaihuku">回復方法</a></li>
+       </ul>
+     </li>
+      <li>
+       <a href="daiyamond">ダイヤ</a>
+       <ul class="sub">
+         <li><a href="daiyamond#daiyahowto">ダイヤとは？</a></li>
+         <li><a href="daiyamond#daiyaget">入手方法</a></li>
+       </ul>
+     </li>
+   </ul>
+</nav>
+    <hr />
+    <!-- <div id="head"></div> -->
+<div class = "daimei">
+ <h3>ダイヤ</h3>
+ </div>
+<ul class="mokuji">
+  <li><a href="#daiyahowto">ダイヤとは?</a></li>
+  <li><a href="#daiyaget">入手方法</a></li>
+</ul>
+
+<div id="daiyahowto">
+  <h2 class="check">ダイヤとは?</h2>
+  <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTERATEhEWFhASFRUVGRgTERAaFRAXFhcWFxYTGRUYHSggGRolGxMTIjEhJSkrLi4vFx8/ODMtNygtMCsBCgoKDg0OGhAQGzUlICYrLS8wMDUtLSsvLi0tLS0vLy8tLy8tLS0tLS81LS0tLS0tLS0tLS0tLi0tLS0tLS0tLf/AABEIAKgBLAMBEQACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAwYHAv/EAEMQAAIBAgQCCAIGBwUJAAAAAAECAAMRBAUSIQYxEyJBUWFxgZEHMhRCUqGx0RUjYpKTwdJUVXKCshYXNENTc6Lh8P/EABsBAQACAwEBAAAAAAAAAAAAAAACAwEEBQYH/8QAMxEBAAIBAgQDBQcEAwAAAAAAAAECAwQREiExQQUTURQiYaHRMnGBkbHB8BVS4fEjQlP/2gAMAwEAAhEDEQA/AOCnFfQSAgICAgICAgICAgICAgICAgICAgICAgICAgIH2KTW1aTp3F7G3VsT7al9xJRSZjdVOalbRSZ5+jaMBVui9DU1VF1IOja9RdIfUu3WGkg7dkz5dvRH2nDtM8UcuvwaKilSVYEMCQQQQVI5gg8jIzEwurMWjevOEhsurAKTQqgMbAmlUAYkFgASNzZWPkDJeVf0Ue1YOfvx+bWuFckgI1wuv5T8pQOG8tBDeRjy7eiU6jFHW0dduvfozRwdR1Z0pO1Nb3ZablVsAxuwFhYEE+BmIpaY3iC+fFS3Da0RPpu0oLkAbkmwA3JJ5AAczIxEytmeGN5bFoOSQEa4UMRpNwraQrW52PSJbv1CS8u2+2yqdRiisWm0bS1CRXMwEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQECUmOYUTRFtBcubqrXJCgbMCARo2Yb9Y98sjLMV4YauTS0vljLbtG3p6/VJXOn1hiqlbPqRrlaxexdqt/n1MqahsCqhdhLI1Exbdrz4ZjnHNN+s9dvTtEf79Uc5lVIcF79IWLXSndi9yxvpuLknlIedZsexYN4nh6bd57fifpFwlJV0p0ZY3pqqlyQFBewszBbgMRexPjd51toj0R9ix8V7Tz4vl35fjz2TKPEFROn0AKKtMU7KzjQqotJBck3siDfYkgEmwtJ+0Tz5KJ8MpaaTM77TvPKOfPeVdh8SUDADchlBJP6sVF0VCq3tqZAFuewd9iK65JrGzby6auS0Wn8fjt05+kJFHNagakTpYUmVwpRACU+W5UAkd++8lGa3LdXbQ4trcPKZ5b7zPXr1nZ9rnDi5VUBOHp4cnSDrCdD1nD3DkigoKnq78ud8zqJ332VV8NxxWKzMzETv+v5deqtEodFmAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF5lPCGNxNMVaGHL0iSA3SURcg2OzMDLa4b2jeIambXYMVuC9tp/H6JY4Bx4emlSiKXSsyqz1aZXUtN6tj0ZY/LSfsmfZ791c+Jafhmazvt8PjEd9vVTZzlT4aotOoVLNTSoNBJGmouoDcDeV3pNZ2ls4M9c1eKvrMfkgyK5b5Vw3iMRh8RiKYXocOGLlmsequs2Hbt+Msritas2hq5dXjxZK47dbdP0ffDXC2IxpcUFFkG7OWVTy6oaxBbcbeMY8Vr9GNTrMWn24+6J+hMV/Za/wDAq/0zHl29FvtGH++PzhoxWBq0gDVo1EB5F6bqD4DUN5GazHWE6ZKX5VmJ+6V9T4AzJgGGEJBAIPS4fcHcfXlvs+T0ac+J6WJ24/lP0Z/3eZn/AGQ/xcP/AFx7Pk9D+qaX+/5T9FWnD2JOKOEFE/Shzp66d9l1/Nq0/Kb85DyrcXD3XzqsUYvO39315/7feZ8M4zDgtWwtVVHNtOpB5utwPUzNsV69YYxazBl5UvEz/PVGwmUV6tKrVp0malSuXYAWQAajf03kYx2mN4Tvnx0tFLTtM9ISuHOG6+NaomHClqYDHU+nYmwkseKb9ENTq8eniJyd1OZW2V3nPDNbDIz1DTKrVWidDMTqailcc1G2iovrfzll8U1jeWrg1dM1uGu/Tf5zH7KWVtogICAgICAgICAgICAgICAg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">
+
+  <p>ダイヤモンドはドクターマリオワールド内の課金アイテムです。<br>
+     スカウトやハートの回復、一部のアイテムを使用する際に使います。<br>
+　　　→<a href="gacha">スカウトについて</a>
+   </p>
+</div>
+
+<div id="daiyaget">
+  <h2 class="check">入手方法</h2>
+  <h3 class="check">課金で購入する</h3>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2G88OtJiRtNpucjCbYNJk4SEgdIPQYU1QN99NPtLe0wsv1CD0mQ">
+  <p>ダイヤモンドは課金で手に入ります。<br>
+    時期によりダイヤモンドをお得に入手できるパックが販売される可能性があるため、
+    課金を考えている方はショップを毎日確認しましょう。</p>
+</div>
+
+<h3 class="check">無料で入手</h3>
+<p>ドクターマリオワールドでも他のゲームと同様、ステージクリアやイベントなどで無料でダイヤモンドを入手できる可能性があります。<br>
+  詳細な情報が判明次第、随時更新いたします。<br>
+</p>
+
+        <div class="footer">
+            <hr/>
+
+ <!--  <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+  <a href="/" class="btn-circle-fishy">Home🏠</a>
+ <!--  <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+</div>
+
+
+
+
+
+<script>
+    let socket = io.connect();
+    socket.emit("s","imgreq") ;
+    socket.on("head", (imgbox) => {
+     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+     let urlCreator = window.URL || window.webkitURL ;
+     let head = urlCreator.createObjectURL(blob_head);
+     let dot = urlCreator.createObjectURL(blob_dot);
+     let baikin = urlCreator.createObjectURL(blob_baikin);
+     let olddoc = urlCreator.createObjectURL(blob_olddoc);
+     $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
+    })
+    </script>
+    </body>
+
+</html>

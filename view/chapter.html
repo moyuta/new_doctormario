@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+       <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
+        <link rel="stylesheet" type="text/css" href="/index.css">
+         <link rel="stylesheet" type="text/css" href="/style.css">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width">
+        <title>doctor mario</title>
+
+    </head>
+    <body>
+         <div class="header">
+              
+    <h1 class ="ribon">ドクターマリオ　ワールド攻略サイト</h1>
+    </div>
+   <nav>
+  <ul class="primary">
+    <li>
+      <a href="/">Home</a>
+    </li>
+      <li>
+      <a href="progress">進め方</a>
+      <ul class="sub">
+        <li><a href="stage">ステージモードを進める</a></li>
+        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+        <li><a href="heart">ハートを回復する</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="chapter">攻略</a>
+    </li>
+    <li>
+      <a href="character">キャラ</a>
+      <ul class="sub">
+        <li><a href="list">キャラ一覧</a></li>
+        <li><a href="strongest">最強キャラランキング</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="gacha">スカウト</a>
+      <ul class="sub">
+        <li><a href="whatsgacha">スカウトとは？</a></li>
+         <li><a href="timing">タイミング</a></li>
+      </ul>
+    </li>
+   
+     <li>
+      <a href="item">アイテム</a>
+      <ul class="sub">
+        <li><a href="whatsitem">アイテムとは？</a></li>
+        <li><a href="kind">種類と使い方</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="heart">ハート</a>
+      <ul class="sub">
+        <li><a href="whatsherat">ハートとは？</a></li>
+        <li><a href="obtain">回復方法</a></li>
+      </ul>
+    </li>
+     <li>
+      <a href="daiyamond">ダイヤ</a>
+      <ul class="sub">
+        <li><a href="whatsdiamond">ダイヤとは？</a></li>
+        <li><a href="obtain">入手方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<hr />
+  
+        <div>
+            <div class = "daimei">
+             <h3>攻略</h3>
+             </div>
+             <div class = "check">
+        <h2>攻略動画まとめ</h2>
+        </div>
+        <p>こちらのyoutubeでは，ドクターマリオワールド「ストーリーモード」の最新攻略方法を紹介しています．</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/2_umYwXmmgE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <p>また，高ランクの対人戦も実況で出しています．</p>
+       <p>お気に入り登録お願いいたします</p>
+       <div id="dot"></div>
+
+       </div>
+
+         <div class="footer">
+            <hr/>
+  <!-- <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+  <a href="/" class="btn-circle-fishy">Home🏠</a>
+  <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+</div>
+
+<script>
+      let socket = io.connect();
+      socket.emit("s","s") ;
+    socket.on("head", (imgbox) => {
+     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+     let urlCreator = window.URL || window.webkitURL ;
+     let head = urlCreator.createObjectURL(blob_head);
+     let dot = urlCreator.createObjectURL(blob_dot);
+     let baikin = urlCreator.createObjectURL(blob_baikin);
+     let olddoc = urlCreator.createObjectURL(blob_olddoc);
+     $("#dot").append("<img src='"+dot+"'　width='100' height='100'>") ;
+    })
+</script>
+    </body>
+</html>
