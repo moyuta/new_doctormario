@@ -1,153 +1,164 @@
 <!DOCTYPE html>
 <html>
-    
-    
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
-        <link rel="stylesheet" type="text/css" href="/index.css">
-         <link rel="stylesheet" type="text/css" href="/style.css">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <title>doctor mario</title>
-        <meta name="viewport" content="width=device-width">
-    </head>
-    
-    <body>
-        
-    <div class="header">
-    <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
-    </div>
-   
-
-<nav>
-  <ul class="primary">
-    <li>
-      <a href="/">Home</a>
-    </li>
-      <li>
-      <a href="progress">進め方</a>
-      <ul class="sub">
-        <li><a href="stage">ステージモードを進める</a></li>
-        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
-        <li><a href="heart">ハートを回復する</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="chapter">攻略</a>
-    </li>
-    <li>
-      <a href="character">キャラ</a>
-      <ul class="sub">
-        <li><a href="list">キャラ一覧</a></li>
-        <li><a href="strongest">最強キャラランキング</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="gacha">スカウト</a>
-      <ul class="sub">
-        <li><a href="whatsgacha">スカウトとは？</a></li>
-         <li><a href="timing">タイミング</a></li>
-      </ul>
-    </li>
-   
-     <li>
-      <a href="item">アイテム</a>
-      <ul class="sub">
-        <li><a href="whatsitem">アイテムとは？</a></li>
-        <li><a href="kind">種類と使い方</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="heart">ハート</a>
-      <ul class="sub">
-        <li><a href="whatsherat">ハートとは？</a></li>
-        <li><a href="obtain">回復方法</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="daiyamond">ダイヤ</a>
-      <ul class="sub">
-        <li><a href="whatsdiamond">ダイヤとは？</a></li>
-        <li><a href="obtain">入手方法</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
 
 
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://doctormario.herokuapp.com/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="/index.css">
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>doctor mario</title>
+  <link rel="canonical" href="http://http://gamechapter.monster/">
+  <meta name="viewport" content="width=device-width">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125784262-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    
-    <div id="head"></div>
-    <p class = "subtitle">7/10,ios,googlePlay 発売予定</p>
-    <hr />
-      
-    <div class="middle">
-        
-        <div class = "text">
-            <h2 class = "check">ドクターマリオワールドってどんなゲーム？</h2>
-            <img src = "https://appmedia.jp/wp-content/uploads/2019/06/17c97edcc9cd874615dee973fa0b4519.jpg" width = "500">
-            <p>
-                ドクターマリオワールドは、1990年に発売されたGB・FC用パズルゲーム
-                「ドクターマリオ」をベースとする新作スマホ向けゲームです。<br><br>
-
-                プカプカ浮いてくる赤、青、黄色のカプセルを操作。同じ色をタテ・ヨコ３つ揃えてウイルスを消すシンプルなパズルゲームです。<br><br>
-                使えるカプセルの数はステージごとに決まっていて、使い切る前にウイルスを全て消すことができればステージクリアです。<br><br>
-
-                半分になったカプセルの使い方がウイルス撲滅のカギ。ゆっくりじっくり考えてウイルスを退治していきます。<br>
-            </p>
-            <h2 class = "check">ドクターマリオワールド　紹介映像</h2>
-           <iframe width="560" height="315" src="https://www.youtube.com/embed/92xdQVhcMSw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <div class ="check">
-                <h2>事前登録情報</h2>
-                </div>
-                <p><a href="https://play.google.com/store/apps/details?id=com.nintendo.zama">Googleplayストア</a>、
-                   <a href="https://apps.apple.com/jp/app/id1440129313">iTunesストア</a>にて事前登録が開始されています。</p>
-         </div>
-        
-        <div class = "text">
-        <h2 class = "check">LINEやフェイスブックと連携</h2>
-        <p>
-            「ステージモード」では白衣に着替え、カプセルを携えた「マリオ」たちキャラクターとともにウイルスが大量発生した世界へ退治の冒険に出かけます。<br>
-             舞台は5ワールド200ステージ以上が用意されるほか、今後も定期的に新たなワールドを追加されるそうです。<br>
-             また、「LINE」や「Facebook」といったSNS（ソーシャル・ネットワーキング・サービス）と連携し、「ハート」を送り合ってスタミナを回復したり、ゲームの進捗状況を競うなど、友人や家族、世界中のプレイヤーとも楽しめます。<br>
-             オンラインで直接対戦する「<span style="color:red">VSモード</span>」も搭載します。</p>
-            <h2 class = "check">ドクターマリオワールド　みんなで編</h2>
-             <iframe width="560" height="315" src="https://www.youtube.com/embed/z8XKTOiclr4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        </div>
-        <div class="footer">
-            <hr/>
-  <!-- <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
-  <a href="/" class="btn-circle-fishy">Home🏠</a>
-  <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
-        </div>
-
-
-
-
-
-<script>
-    let socket = io.connect();
-    socket.emit("s","imgreq") ;
-    socket.on("head", (imgbox) => {
-     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
-     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
-     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
-     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
-     let blob_world = new Blob([imgbox.world],{ type: "image/png" });
-     
-     
-     let urlCreator = window.URL || window.webkitURL ;
-     let head = urlCreator.createObjectURL(blob_head);
-     let dot = urlCreator.createObjectURL(blob_dot);
-     let baikin = urlCreator.createObjectURL(blob_baikin);
-     let olddoc = urlCreator.createObjectURL(blob_olddoc);
-     let world = urlCreator.createObjectURL(blob_world);
-     $("#head").append("<img src='"+head+"'　width='800px' height='450px'>") ;
-     
-    });
+  gtag('config', 'UA-125784262-5');
 </script>
 
+</head>
 
-</body>
-</html>
+<body>
+
+  <div class="header">
+    <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
+  </div>
+
+
+  <nav>
+    <ul class="primary">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="progress">進め方</a>
+        <ul class="sub">
+          <li><a href="stage">ステージモードを進める</a></li>
+          <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+          <li><a href="heart">ハートを回復する</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="chapter">攻略</a>
+      </li>
+      <li>
+        <a href="character">キャラ</a>
+        <ul class="sub">
+          <li><a href="list">キャラ一覧</a></li>
+          <li><a href="strongest">最強キャラランキング</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="gacha">スカウト</a>
+        <ul class="sub">
+          <li><a href="whatsgacha">スカウトとは？</a></li>
+          <li><a href="timing">タイミング</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="item">アイテム</a>
+        <ul class="sub">
+          <li><a href="whatsitem">アイテムとは？</a></li>
+          <li><a href="kind">種類と使い方</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="heart">ハート</a>
+        <ul class="sub">
+          <li><a href="whatsherat">ハートとは？</a></li>
+          <li><a href="obtain">回復方法</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="daiyamond">ダイヤ</a>
+        <ul class="sub">
+          <li><a href="whatsdiamond">ダイヤとは？</a></li>
+          <li><a href="obtain">入手方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+
+
+
+  <div id="head"></div>
+  <p class = "subtitle">7/10,ios,googlePlay 発売予定</p>
+  <hr />
+
+  <div class="middle">
+
+    <div class = "text">
+      <h2 class = "check">ドクターマリオワールドってどんなゲーム？</h2>
+      <img src = "https://appmedia.jp/wp-content/uploads/2019/06/17c97edcc9cd874615dee973fa0b4519.jpg" width = "500">
+      <p>
+        ドクターマリオワールドは、1990年に発売されたGB・FC用パズルゲーム
+        「ドクターマリオ」をベースとする新作スマホ向けゲームです。<br><br>
+
+        プカプカ浮いてくる赤、青、黄色のカプセルを操作。同じ色をタテ・ヨコ３つ揃えてウイルスを消すシンプルなパズルゲームです。<br><br>
+        使えるカプセルの数はステージごとに決まっていて、使い切る前にウイルスを全て消すことができればステージクリアです。<br><br>
+
+        半分になったカプセルの使い方がウイルス撲滅のカギ。ゆっくりじっくり考えてウイルスを退治していきます。<br>
+      </p>
+      <h2 class = "check">ドクターマリオワールド　紹介映像</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/92xdQVhcMSw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class ="check">
+        <h2>事前登録情報</h2>
+      </div>
+      <p><a href="https://play.google.com/store/apps/details?id=com.nintendo.zama">Googleplayストア</a>、
+        <a href="https://apps.apple.com/jp/app/id1440129313">iTunesストア</a>にて事前登録が開始されています。</p>
+      </div>
+
+      <div class = "text">
+        <h2 class = "check">LINEやフェイスブックと連携</h2>
+        <p>
+          「ステージモード」では白衣に着替え、カプセルを携えた「マリオ」たちキャラクターとともにウイルスが大量発生した世界へ退治の冒険に出かけます。<br>
+          舞台は5ワールド200ステージ以上が用意されるほか、今後も定期的に新たなワールドを追加されるそうです。<br>
+          また、「LINE」や「Facebook」といったSNS（ソーシャル・ネットワーキング・サービス）と連携し、「ハート」を送り合ってスタミナを回復したり、ゲームの進捗状況を競うなど、友人や家族、世界中のプレイヤーとも楽しめます。<br>
+          オンラインで直接対戦する「<span style="color:red">VSモード</span>」も搭載します。</p>
+          <h2 class = "check">ドクターマリオワールド　みんなで編</h2>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/z8XKTOiclr4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="footer">
+        <hr/>
+        <!-- <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+        <a href="/" class="btn-circle-fishy">Home🏠</a>
+        <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+      </div>
+
+
+
+
+
+      <script>
+      let socket = io.connect();
+      socket.emit("s","imgreq") ;
+      socket.on("head", (imgbox) => {
+        let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+        let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+        let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+        let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+        let blob_world = new Blob([imgbox.world],{ type: "image/png" });
+
+
+        let urlCreator = window.URL || window.webkitURL ;
+        let head = urlCreator.createObjectURL(blob_head);
+        let dot = urlCreator.createObjectURL(blob_dot);
+        let baikin = urlCreator.createObjectURL(blob_baikin);
+        let olddoc = urlCreator.createObjectURL(blob_olddoc);
+        let world = urlCreator.createObjectURL(blob_world);
+        $("#head").append("<img src='"+head+"'　width='800px' height='450px'>") ;
+
+      });
+    </script>
+
+
+  </body>
+  </html>

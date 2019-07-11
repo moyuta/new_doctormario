@@ -1,147 +1,157 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
-         <link rel="stylesheet" type="text/css" href="/style.css">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-         <meta name="viewport" content="width=device-width">
-        <title>doctor mario</title>
 
-    </head>
-    <body>
-       
-    <div class="header">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://doctormario.herokuapp.com/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>doctor mario</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125784262-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125784262-5');
+</script>
+
+
+</head>
+<body>
+
+  <div class="header">
     <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
-    </div>
- 
-<nav>
-  <ul class="primary">
-    <li>
-      <a href="/">Home</a>
-    </li>
+  </div>
+
+  <nav>
+    <ul class="primary">
       <li>
-      <a href="progress">進め方</a>
-      <ul class="sub">
-        <li><a href="stage">ステージモードを進める</a></li>
-        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
-        <li><a href="heart">ハートを回復する</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="chapter">攻略</a>
-    </li>
-    <li>
-      <a href="character">キャラ</a>
-      <ul class="sub">
-        <li><a href="list">キャラ一覧</a></li>
-        <li><a href="strongest">最強キャラランキング</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="gacha">スカウト</a>
-      <ul class="sub">
-        <li><a href="whatsgacha">スカウトとは？</a></li>
-         <li><a href="timing">タイミング</a></li>
-      </ul>
-    </li>
-   
-     <li>
-      <a href="item">アイテム</a>
-      <ul class="sub">
-        <li><a href="whatsitem">アイテムとは？</a></li>
-        <li><a href="kind">種類と使い方</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="heart">ハート</a>
-      <ul class="sub">
-        <li><a href="whatsherat">ハートとは？</a></li>
-        <li><a href="obtain">回復方法</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="daiyamond">ダイヤ</a>
-      <ul class="sub">
-        <li><a href="whatsdiamond">ダイヤとは？</a></li>
-        <li><a href="obtain">入手方法</a></li>
-      </ul>
-    </li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="progress">進め方</a>
+        <ul class="sub">
+          <li><a href="stage">ステージモードを進める</a></li>
+          <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+          <li><a href="heart">ハートを回復する</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="chapter">攻略</a>
+      </li>
+      <li>
+        <a href="character">キャラ</a>
+        <ul class="sub">
+          <li><a href="list">キャラ一覧</a></li>
+          <li><a href="strongest">最強キャラランキング</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="gacha">スカウト</a>
+        <ul class="sub">
+          <li><a href="whatsgacha">スカウトとは？</a></li>
+          <li><a href="timing">タイミング</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="item">アイテム</a>
+        <ul class="sub">
+          <li><a href="whatsitem">アイテムとは？</a></li>
+          <li><a href="kind">種類と使い方</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="heart">ハート</a>
+        <ul class="sub">
+          <li><a href="whatsherat">ハートとは？</a></li>
+          <li><a href="obtain">回復方法</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="daiyamond">ダイヤ</a>
+        <ul class="sub">
+          <li><a href="whatsdiamond">ダイヤとは？</a></li>
+          <li><a href="obtain">入手方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <hr />
+  <!--  <div id="head"></div> -->
+  <div class = "daimei">
+    <h3>進め方</h3>
+  </div>
+  <ul class="mokuji">
+    <li><a href="#stage">ステージモードを進める</a></li>
+    <li><a href="#gachasukauto">ガチャを引きキャラをスカウトする</a></li>
+    <li><a href="#heartkaihuku">ハートを回復する</a></li>
   </ul>
-</nav>
-    <hr />
-   <!--  <div id="head"></div> -->
-    <div class = "daimei">
- <h3>進め方</h3>
- </div>
-<ul class="mokuji">
-  <li><a href="#stage">ステージモードを進める</a></li>
-  <li><a href="#gachasukauto">ガチャを引きキャラをスカウトする</a></li>
-   <li><a href="#heartkaihuku">ハートを回復する</a></li>
-</ul>
-    <div id = "stage">
+  <div id = "stage">
     <h2 class = "check">ステージモードを進める</h2>
     <img src = "https://www.rakda3.net/img/2019/07/dr_mario_world_stage_select.png">
     <div class = "text">
-    <p>ゲームを始めたらまずステージモードを進めましょう。ステージクリアでコインが入手出来ます。<br><br>
-      コインはキャラのスカウトやサポートアイテムの購入に使えるため、序盤から重要な要素です。<br>ハートを無駄にしないよう効率よくステージモードを攻略しましょう。</p>
-    </div>
+      <p>ゲームを始めたらまずステージモードを進めましょう。ステージクリアでコインが入手出来ます。<br><br>
+        コインはキャラのスカウトやサポートアイテムの購入に使えるため、序盤から重要な要素です。<br>ハートを無駄にしないよう効率よくステージモードを攻略しましょう。</p>
+      </div>
     </div>
     <div id = "gachasukauto">
-    <h2 class = "check">ガチャを引きキャラをスカウトする</h2>
-    <img src = "https://cdn.gamerch.com/contents/wiki/824/entry/fLZQ1yia.png">
-    <div class = "text">
-    <p>キャラにはそれぞれ違うスキルを持ちます。コインが貯まったら「スカウト」からガチャを引きましょう。
-    様々なキャラを試して自分の使いやすいスキルを持つキャラを探すのがおすすめです。<br>
-    →<a href="gacha">スカウトとは？</a>
-    </p>
-    
-    </div>
+      <h2 class = "check">ガチャを引きキャラをスカウトする</h2>
+      <img src = "https://cdn.gamerch.com/contents/wiki/824/entry/fLZQ1yia.png">
+      <div class = "text">
+        <p>キャラにはそれぞれ違うスキルを持ちます。コインが貯まったら「スカウト」からガチャを引きましょう。
+          様々なキャラを試して自分の使いやすいスキルを持つキャラを探すのがおすすめです。<br>
+          →<a href="gacha">スカウトとは？</a>
+        </p>
+
+      </div>
     </div>
     <div id = "heartkaihuku">
-    <h2 class = "check">ハートを回復する</h2>
-    <img src = "https://d2n122k3ikcd8z.cloudfront.net/img/76644be8-a1ce-11e9-a65c-7707194a2335/heart-diamond.jpg">
-    <div class = "text">
-    <p>ドクターマリオワールドではLINEやFacebookと連携し、フレンドからハートをもらうことでハートを回復できます。<br>
-    ハートがないとゲームを進められないため、SNS連携をして家族や友達と積極的にハートを送りあいましょう。<br>
-    →<a href="heart">ハートとは？</a>
-    </p>
+      <h2 class = "check">ハートを回復する</h2>
+      <img src = "https://d2n122k3ikcd8z.cloudfront.net/img/76644be8-a1ce-11e9-a65c-7707194a2335/heart-diamond.jpg">
+      <div class = "text">
+        <p>ドクターマリオワールドではLINEやFacebookと連携し、フレンドからハートをもらうことでハートを回復できます。<br>
+          ハートがないとゲームを進められないため、SNS連携をして家族や友達と積極的にハートを送りあいましょう。<br>
+          →<a href="heart">ハートとは？</a>
+        </p>
+      </div>
+
     </div>
-    
-</div>
-
-
-
-   
-        <div class="footer">
-            <hr/>
-            
- <!--  <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
-  <a href="/" class="btn-circle-fishy">Home🏠</a>
- <!--  <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
-</div>
 
 
 
 
+    <div class="footer">
+      <hr/>
 
-<script>
+      <!--  <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+      <a href="/" class="btn-circle-fishy">Home🏠</a>
+      <!--  <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+    </div>
+
+
+
+
+
+    <script>
     let socket = io.connect();
     socket.emit("s","imgreq") ;
     socket.on("head", (imgbox) => {
-     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
-     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
-     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
-     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
-     let urlCreator = window.URL || window.webkitURL ;
-     let head = urlCreator.createObjectURL(blob_head);
-     let dot = urlCreator.createObjectURL(blob_dot);
-     let baikin = urlCreator.createObjectURL(blob_baikin);
-     let olddoc = urlCreator.createObjectURL(blob_olddoc);
-     $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
+      let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+      let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+      let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+      let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+      let urlCreator = window.URL || window.webkitURL ;
+      let head = urlCreator.createObjectURL(blob_head);
+      let dot = urlCreator.createObjectURL(blob_dot);
+      let baikin = urlCreator.createObjectURL(blob_baikin);
+      let olddoc = urlCreator.createObjectURL(blob_olddoc);
+      $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
     })
     </script>
-    </body>
-    
-</html>
+  </body>
+
+  </html>

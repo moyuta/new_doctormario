@@ -1,180 +1,190 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-       <script src="https://doctormario.paiza-user.cloud:4000/socket.io/socket.io.js"></script>
-         <link rel="stylesheet" type="text/css" href="/style.css">
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-         <meta name="viewport" content="width=device-width">
-        <title>doctor mario</title>
 
-    </head>
-    <body>
-    <div class="header">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://doctormario.herokuapp.com/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>doctor mario</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125784262-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125784262-5');
+</script>
+
+
+</head>
+<body>
+  <div class="header">
     <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
-    </div>
- 
-<nav>
-  <ul class="primary">
-    <li>
-      <a href="/">Home</a>
-    </li>
+  </div>
+
+  <nav>
+    <ul class="primary">
       <li>
-      <a href="progress">進め方</a>
-      <ul class="sub">
-        <li><a href="stage">ステージモードを進める</a></li>
-        <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
-        <li><a href="heart">ハートを回復する</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="chapter">攻略</a>
-    </li>
-    <li>
-      <a href="character">キャラ</a>
-      <ul class="sub">
-        <li><a href="list">キャラ一覧</a></li>
-        <li><a href="strongest">最強キャラランキング</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="gacha">スカウト</a>
-      <ul class="sub">
-        <li><a href="whatsgacha">スカウトとは</a></li>
-         <li><a href="timing">タイミング</a></li>
-      </ul>
-    </li>
-   
-     <li>
-      <a href="item">アイテム</a>
-      <ul class="sub">
-        <li><a href="whatsitem">アイテムとは？</a></li>
-        <li><a href="kind">種類と使い方</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="heart">ハート</a>
-      <ul class="sub">
-        <li><a href="whatsherat">ハートとは？</a></li>
-        <li><a href="obtain">回復方法</a></li>
-      </ul>
-    </li>
-     <li>
-      <a href="daiyamond">ダイヤ</a>
-      <ul class="sub">
-        <li><a href="whatsdiamond">ダイヤとは？</a></li>
-        <li><a href="obtain">入手方法</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-    <hr />
-    
-    
-    <!-- <div id="head"></div> -->
-    <div class = "daimei">
-  <h3>キャラ</h3>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="progress">進め方</a>
+        <ul class="sub">
+          <li><a href="stage">ステージモードを進める</a></li>
+          <li><a href="gacha">ガチャを引きキャラをスカウトする</a></li>
+          <li><a href="heart">ハートを回復する</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="chapter">攻略</a>
+      </li>
+      <li>
+        <a href="character">キャラ</a>
+        <ul class="sub">
+          <li><a href="list">キャラ一覧</a></li>
+          <li><a href="strongest">最強キャラランキング</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="gacha">スカウト</a>
+        <ul class="sub">
+          <li><a href="whatsgacha">スカウトとは</a></li>
+          <li><a href="timing">タイミング</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="item">アイテム</a>
+        <ul class="sub">
+          <li><a href="whatsitem">アイテムとは？</a></li>
+          <li><a href="kind">種類と使い方</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="heart">ハート</a>
+        <ul class="sub">
+          <li><a href="whatsherat">ハートとは？</a></li>
+          <li><a href="obtain">回復方法</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="daiyamond">ダイヤ</a>
+        <ul class="sub">
+          <li><a href="whatsdiamond">ダイヤとは？</a></li>
+          <li><a href="obtain">入手方法</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+  <hr />
+
+
+  <!-- <div id="head"></div> -->
+  <div class = "daimei">
+    <h3>キャラ</h3>
   </div>
   <ul class="mokuji">
-  <li><a href="#characterlist">キャラ一覧</a></li>
-  <li><a href="#strongestcharacter">最強キャラランキング</a></li>
-</ul>
+    <li><a href="#characterlist">キャラ一覧</a></li>
+    <li><a href="#strongestcharacter">最強キャラランキング</a></li>
+  </ul>
 
- <div id = "characterlist">
-     <h2 class="check">キャラ一覧 </h2>
-  <h3 class="check">ドクターマリオ </h3>
-  <img src = "https://i2.gamebiz.jp/images/original/18091081065d1ecb5f84d560028.jpg" alt="ドクターマリオ">
-<img src="https://i2.gamebiz.jp/images/original/17921272355d1ecca5578f20028.jpg" alt="ドクターマリオステージスキル">
-<img src = "https://i.gyazo.com/a1c3aace79044ae788e9fbf29d19b5fa.png" alt="ドクターマリオVSスキル" width = "650">
+  <div id = "characterlist">
+    <h2 class="check">キャラ一覧 </h2>
+    <h3 class="check">ドクターマリオ </h3>
+    <img src = "https://i2.gamebiz.jp/images/original/18091081065d1ecb5f84d560028.jpg" alt="ドクターマリオ">
+    <img src="https://i2.gamebiz.jp/images/original/17921272355d1ecca5578f20028.jpg" alt="ドクターマリオステージスキル">
+    <img src = "https://i.gyazo.com/a1c3aace79044ae788e9fbf29d19b5fa.png" alt="ドクターマリオVSスキル" width = "650">
 
-<h3 class="check">ドクターヨッシー</h3>
-<img src = "https://i2.gamebiz.jp/images/original/9861434045d1ecd11d0c8d0028.jpg" alt="ドクターヨッシー">
-<img src = "https://i2.gamebiz.jp/images/original/10204135435d1ecd12bec770028.jpg" alt="ドクターヨッシーステージスキル">
-<img src = "https://i.gyazo.com/6fdc6346e069ab4d8ca168445a68161f.png" alt="ドクターヨッシーVSスキル" width = "650">
+    <h3 class="check">ドクターヨッシー</h3>
+    <img src = "https://i2.gamebiz.jp/images/original/9861434045d1ecd11d0c8d0028.jpg" alt="ドクターヨッシー">
+    <img src = "https://i2.gamebiz.jp/images/original/10204135435d1ecd12bec770028.jpg" alt="ドクターヨッシーステージスキル">
+    <img src = "https://i.gyazo.com/6fdc6346e069ab4d8ca168445a68161f.png" alt="ドクターヨッシーVSスキル" width = "650">
 
-<h3 class="check">ドクタークッパ </h3>
+    <h3 class="check">ドクタークッパ </h3>
     <img src = "https://i2.gamebiz.jp/images/original/17266288645d1ece39da6940028.jpg" alt="ドクタークッパ">
-<img src = "https://i2.gamebiz.jp/images/original/10794651845d1ece3abe52c0028.jpg" alt="ドクタークッパステージスキル">
-<img src = "https://i.gyazo.com/aa3d982926ea9b7f5fe241fdb60e519a.png" alt="ドクタークッパVSスキル" width = "650">
+    <img src = "https://i2.gamebiz.jp/images/original/10794651845d1ece3abe52c0028.jpg" alt="ドクタークッパステージスキル">
+    <img src = "https://i.gyazo.com/aa3d982926ea9b7f5fe241fdb60e519a.png" alt="ドクタークッパVSスキル" width = "650">
 
-<h3 class="check">ドクタークッパJr.</h3>
-<img src = "https://i2.gamebiz.jp/images/original/7435160745d1ecf62e34b90028.jpg" alt="ドクタークッパjr">
-<img src = "https://i2.gamebiz.jp/images/original/10206489295d1ecf63cddca0028.jpg" alt="ドクタークッパjrステージスキル">
-<img src = "https://i.gyazo.com/8fb340435a650f5b009ab81d9fba184e.png" alt="ドクタークッパjrVSスキル" width = "650">
+    <h3 class="check">ドクタークッパJr.</h3>
+    <img src = "https://i2.gamebiz.jp/images/original/7435160745d1ecf62e34b90028.jpg" alt="ドクタークッパjr">
+    <img src = "https://i2.gamebiz.jp/images/original/10206489295d1ecf63cddca0028.jpg" alt="ドクタークッパjrステージスキル">
+    <img src = "https://i.gyazo.com/8fb340435a650f5b009ab81d9fba184e.png" alt="ドクタークッパjrVSスキル" width = "650">
 
-<h3 class="check">ドクタールイージ</h3>
-<img src = "https://i.gyazo.com/6449b1bdeddcb3e7b6aa486bae47bf05.png" alt="ドクタールイージ" width = "650">
-<img src = "https://i.gyazo.com/f1097e2d4e809bef4f8346b2526fbbd2.png" alt="ドクタールイージステージスキル" width = "650">
-<img src = "https://i.gyazo.com/097a6f10f7a2d49333ef9e356692556a.png" alt="ドクタールイージVSスキル" width = "650">
+    <h3 class="check">ドクタールイージ</h3>
+    <img src = "https://i.gyazo.com/6449b1bdeddcb3e7b6aa486bae47bf05.png" alt="ドクタールイージ" width = "650">
+    <img src = "https://i.gyazo.com/f1097e2d4e809bef4f8346b2526fbbd2.png" alt="ドクタールイージステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/097a6f10f7a2d49333ef9e356692556a.png" alt="ドクタールイージVSスキル" width = "650">
 
-<h3 class="check">ドクターキノピコ</h3>
-<img src = "https://i.gyazo.com/f94b2798f0d048650178af1413cc4571.png" alt="ドクターキノピコ" width = "650">
-<img src = "https://i.gyazo.com/9a6ff5b316414a8f38ec7ea4ded55973.png" alt="ドクターキノピコステージスキル" width = "650">
-<img src = "https://i.gyazo.com/805b2247cf17b937181f38c3dab041d2.png" alt="ドクターキノピコVSスキル" width = "650">
+    <h3 class="check">ドクターキノピコ</h3>
+    <img src = "https://i.gyazo.com/f94b2798f0d048650178af1413cc4571.png" alt="ドクターキノピコ" width = "650">
+    <img src = "https://i.gyazo.com/9a6ff5b316414a8f38ec7ea4ded55973.png" alt="ドクターキノピコステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/805b2247cf17b937181f38c3dab041d2.png" alt="ドクターキノピコVSスキル" width = "650">
 
-<h3 class="check">ドクタールドウィッグ</h3>
-<img src = "https://i.gyazo.com/3cb5bc4d2a5ca2fe7c0ee573e89816e7.png" alt="ルイージ" width = "650">
-<img src = "https://i.gyazo.com/d9beb3b2de590cb080e67361334c87b0.png" alt="ドクタールドウィッグステージスキル" width = "650">
-<img src = "https://i.gyazo.com/347353ef8c0d6d009fd2aace20117979.png" alt="ドクタールドウィッグVSスキル" width = "650">
+    <h3 class="check">ドクタールドウィッグ</h3>
+    <img src = "https://i.gyazo.com/3cb5bc4d2a5ca2fe7c0ee573e89816e7.png" alt="ルイージ" width = "650">
+    <img src = "https://i.gyazo.com/d9beb3b2de590cb080e67361334c87b0.png" alt="ドクタールドウィッグステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/347353ef8c0d6d009fd2aace20117979.png" alt="ドクタールドウィッグVSスキル" width = "650">
 
-<h3 class="check">ドクターピーチ</h3>
-<img src = "https://i.gyazo.com/5418f090f5377b76238573d7003ee6b7.png" alt="ドクターピーチ" width = "650">
-<img src = "https://i.gyazo.com/2bc815dce3be2ef4193ecfd2218725ed.png" alt="ドクターピーチステージスキル" width = "650">
-<img src = "https://i.gyazo.com/fb05e8608448353cd0b68408916d7d5c.png" alt="ドクターピーチVSスキル" width = "650">
+    <h3 class="check">ドクターピーチ</h3>
+    <img src = "https://i.gyazo.com/5418f090f5377b76238573d7003ee6b7.png" alt="ドクターピーチ" width = "650">
+    <img src = "https://i.gyazo.com/2bc815dce3be2ef4193ecfd2218725ed.png" alt="ドクターピーチステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/fb05e8608448353cd0b68408916d7d5c.png" alt="ドクターピーチVSスキル" width = "650">
 
-<h3 class="check">ドクターキノピオ</h3>
-<img src = "https://i.gyazo.com/57618de2e959bb0eae5aaef86b786354.png" alt="ドクターキノピオ" width = "650">
-<img src = "https://i.gyazo.com/a763066d99baf8e4443d0884712da0e3.png" alt="ドクターキノピオステージスキル" width = "650">
-<img src = "https://i.gyazo.com/2726bfbeb6591ba49819dca94fbc4dbe.png" alt="ドクターキノピオVSスキル" width = "650">
+    <h3 class="check">ドクターキノピオ</h3>
+    <img src = "https://i.gyazo.com/57618de2e959bb0eae5aaef86b786354.png" alt="ドクターキノピオ" width = "650">
+    <img src = "https://i.gyazo.com/a763066d99baf8e4443d0884712da0e3.png" alt="ドクターキノピオステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/2726bfbeb6591ba49819dca94fbc4dbe.png" alt="ドクターキノピオVSスキル" width = "650">
 
-<h3 class="check">ドクターウェンディ</h3>
-<img src = "https://i.gyazo.com/a19b868afee73940459b7f1340c33a44.png" alt="" width = "650">
-<img src = "https://i.gyazo.com/eddcf2e392555b4558880074f842d4fe.png" alt="ドクターウェンディステージスキル" width = "650">
-<img src = "https://i.gyazo.com/c2998b3df2b416bed97c8f333d84419b.png" alt="ドクターウェンディVSスキル" width = "650">
+    <h3 class="check">ドクターウェンディ</h3>
+    <img src = "https://i.gyazo.com/a19b868afee73940459b7f1340c33a44.png" alt="" width = "650">
+    <img src = "https://i.gyazo.com/eddcf2e392555b4558880074f842d4fe.png" alt="ドクターウェンディステージスキル" width = "650">
+    <img src = "https://i.gyazo.com/c2998b3df2b416bed97c8f333d84419b.png" alt="ドクターウェンディVSスキル" width = "650">
 
 
-<div class = "text">
-　このほか、2体までセットでき、様々な効果を発揮する「<a href="">サポート</a>」の種類と効果内容や<br>
-　ドクター・サポートの獲得方法も公開された。
-</div>
-</div>
-<div id = "strongestcharacter">
-         <h2 class="check">最強キャラランキング</h2>
+    <div class = "text">
+      このほか、2体までセットでき、様々な効果を発揮する「<a href="">サポート</a>」の種類と効果内容や<br>
+      ドクター・サポートの獲得方法も公開された。
+    </div>
+  </div>
+  <div id = "strongestcharacter">
+    <h2 class="check">最強キャラランキング</h2>
     <p>※現在調査中</p>
-</div>
-
-
-
-   
-        <div class="footer">
-            <hr/>
-            
-  <!-- <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
-  <a href="/" class="btn-circle-fishy">Home🏠</a>
-  <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
-</div>
+  </div>
 
 
 
 
+  <div class="footer">
+    <hr/>
 
-<script>
-    let socket = io.connect();
-    socket.emit("s","imgreq") ;
-    socket.on("head", (imgbox) => {
-     let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
-     let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
-     let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
-     let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
-     let urlCreator = window.URL || window.webkitURL ;
-     let head = urlCreator.createObjectURL(blob_head);
-     let dot = urlCreator.createObjectURL(blob_dot);
-     let baikin = urlCreator.createObjectURL(blob_baikin);
-     let olddoc = urlCreator.createObjectURL(blob_olddoc);
-     $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
-    })
-    </script>
-    </body>
-    
+    <!-- <a href="youtube" class="btn-circle-fishy">Youtube🎥</a> -->
+    <a href="/" class="btn-circle-fishy">Home🏠</a>
+    <!-- <a href="chapter" class="btn-circle-fishy">攻略ページ</a> -->
+  </div>
+
+
+
+
+
+  <script>
+  let socket = io.connect();
+  socket.emit("s","imgreq") ;
+  socket.on("head", (imgbox) => {
+    let blob_head = new Blob([imgbox.headimg] ,{type: "image/png" });
+    let blob_dot = new Blob([imgbox.dot], { type: "image/png" });
+    let blob_baikin = new Blob([imgbox.baikin], { type: "image/png" });
+    let blob_olddoc = new Blob([imgbox.olddoc], { type: "image/png" });
+    let urlCreator = window.URL || window.webkitURL ;
+    let head = urlCreator.createObjectURL(blob_head);
+    let dot = urlCreator.createObjectURL(blob_dot);
+    let baikin = urlCreator.createObjectURL(blob_baikin);
+    let olddoc = urlCreator.createObjectURL(blob_olddoc);
+    $("#head").append("<img src='"+head+"'　width='500' height='450'>") ;
+  })
+  </script>
+</body>
+
 </html>
