@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://doctormario.herokuapp.com/socket.io/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="/style.css">
+
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width">
+  <title>doctor mario</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125784262-5"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125784262-5');
+</script>
+
+
+</head>
+<body>
+  <div class="header">
+    <h1 class ="ribon"><span style="color:white">ドクターマリオ　ワールド攻略サイト</span></h1>
+  </div>
+
+<nav>
+    <ul class="primary">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="progress">進め方</a>
+        <ul class="sub">
+          <li><a href="progress#stage">ステージモードを進める</a></li>
+          <li><a href="progress#gachasukauto">ガチャを引きキャラをスカウトする</a></li>
+          <li><a href="progress#heartkaihuku">ハートを回復する</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="chapter">攻略</a>
+      </li>
+      <li>
+        <a href="character">キャラ</a>
+        <ul class="sub">
+          <li><a href="character#characterlist">キャラ一覧</a></li>
+          <li><a href="character#strongestcharacter">最強キャラランキング</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="gacha">スカウト</a>
+        <ul class="sub">
+          <li><a href="gacha#whatisgacha">スカウトとは？</a></li>
+          <li><a href="gacha#timing">タイミング</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="item">アイテム</a>
+        <ul class="sub">
+          <li><a href="item#itemabout">アイテムとは？</a></li>
+          <li><a href="item#itemhowto">種類と使い方</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="heart">ハート</a>
+        <ul class="sub">
+          <li><a href="heart#heartabout">ハートとは？</a></li>
+          <li><a href="heart#heartkaihuku">回復方法</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="daiyamond">ダイヤ</a>
+        <ul class="sub">
+          <li><a href="daiyamond#daiyahowto">ダイヤとは？</a></li>
+          <li><a href="daiyamond#daiyaget">入手方法</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="board">掲示板</a>
+      </li>
+    </ul>
+  </nav>
+  <hr />
+
+  <div class = "daimei">
+    <h2>フレンド募集掲示板</h2>
+  </div>
+  <h2 class = "check">禁止事項</h2>
+  <ul>
+    <li>誹謗・中傷含む書き込み</li>
+    <li>出会い目的・公序良俗に反する書き込み</li>
+    <li>他サイトやアプリの宣伝</li>
+    <li>アカウント売買目的の書き込み</li>
+  </ul>
+  <div class = "text">
+    <p>禁止事項に当てはまる書き込みがあった場合、予告なく削除やIP規制を行う場合がございます。</p>
+  </div>
+
+  <form name="user">
+    <input type="text" name="name" placeholder="ユーザー名">
+    <input type="button" value="決定" onclick="makename()">
+  </form>
+
+  <div id="username"></div>
+
+<form name="chat">
+<textarea name="message" id="tex" rows="4" cols="40" placeholder="書き込む"></textarea>
+<input type="button" value="送信" onclick="socket()">
+<input type="button" value="更新" onclick="up()">
+</form>
+
+
+      <div id ="list"></div>
+
+  <div class="footer">
+    <hr/>
+    <a href="/" class="btn-circle-fishy">Home🏠</a>
+  </div>
+
+
+</body>
+<script>
+up() ;
+let nowname = window.sessionStorage.getItem(['user_name']) ;
+ if(nowname ==""){
+     nowname = "名無し" ;
+     window.sessionStorage.setItem(['user_name'],[nowname]) ;
+   }
+$("#username").append("<h3>ようこそ["+nowname+"]さん</h3>");
+let gettime = function(){
+    let dt = new Date() ;
+    let year = dt.getFullYear() ;
+    let month = dt.getMonth() + 1 ;
+    let date = dt.getDate() ;
+    let hours = dt.getHours() ;
+    let minutes = dt.getMinutes() ;
+    let seconds = dt.getSeconds() ;
+    let dateT = ["日","月","火","水","木","金","土"] ;
+    let day = dateT[dt.getDay()] ;
+
+    let time = year + "/" + month + "/" + date + "(" + day + ")" + hours + "時:" + minutes + "分:" + seconds + "秒" ;
+    return time ;
+}
+
+function up(){
+  $("#list").empty();
+  let socket = io.connect();
+  socket.emit("update","update") ;
+  socket.on("msg_list",(list)=>{
+      for(let i =0 ; i < list.length ; i++ ){
+
+        $("#list").prepend("<p><span style='color:blue'>"+list[i].name+"</span>["+ list[i].date+"]<br>"+list[i].chat + "</p>") ;
+      }
+  })
+}
+
+
+  let reset_target = document.getElementById("tex");
+
+function socket(){
+   $("#list").empty();
+   let usname = window.sessionStorage.getItem(['user_name']) ;
+   if(usname ==""){
+     usname = "名無し" ;
+   }
+  let socket = io.connect();
+  let chattime = gettime() ;
+  let msg = $(`textarea[name="message"]`).val() ;
+  console.log(msg)
+  socket.emit("msg_from_client",{
+      date : chattime,
+      chat : msg ,
+      name : usname
+    });
+    socket.emit("update","update") ;
+   socket.on("msg_list",(list)=>{
+       for(let i =0 ; i < list.length ; i++ ){
+         $("#list").prepend("<p><span style='color:blue'>"+list[i].name+"</span>["+ list[i].date+"]<br>"+list[i].chat + "</p>");
+       }
+   })
+   reset_target.value = '';
+}
+
+
+function makename(){
+   $("#username").empty();
+let form_name = $(`input[name="name"]`).val() ;
+window.sessionStorage.setItem(['user_name'],[form_name]) ;
+nowname = window.sessionStorage.getItem(['user_name']) ;
+ if(nowname ==""){
+     nowname = "名無し" ;
+     window.sessionStorage.setItem(['user_name'],[nowname]) ;
+   }
+$("#username").append("<h3>ようこそ["+nowname+"]さん</h3>");
+}
+
+
+</script>
+
+</html>
